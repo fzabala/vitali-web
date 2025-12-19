@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Color palette */
+  --color-primary: #d63384;
+  --color-secondary: #9bb53e;
+  --color-background-base: #efe4cd;
+  --color-background-alt: #f6f0e6;
+  --color-text-main: #4a4a4a;
+  --color-text-secondary: #7a7a7a;
+
+  /* Legacy variables for compatibility */
+  --background: var(--color-background-base);
+  --foreground: var(--color-text-main);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Color palette in Tailwind theme */
+  --color-primary: #d63384;
+  --color-secondary: #9bb53e;
+  --color-background-base: #efe4cd;
+  --color-background-alt: #f6f0e6;
+  --color-text-main: #4a4a4a;
+  --color-text-secondary: #7a7a7a;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Legacy colors */
+  --color-background: var(--color-background-base);
+  --color-foreground: var(--color-text-main);
+
+  /* Fonts */
+  --font-family-heading: var(--font-pacifico), cursive;
+  --font-family-body: var(--font-montserrat), sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background-base);
+  color: var(--color-text-main);
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+/* Títulos usan Pacifico */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-pacifico), cursive;
 }
